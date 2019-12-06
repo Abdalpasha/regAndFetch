@@ -1,0 +1,37 @@
+<!-- User editable form to make the changes desired and then update the same in the DB -->
+<div class="row pt-5 pb-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card userlistcard">
+            <div class="card-header bg-info">
+              <h4>Update and click save to save the changes: </h4>
+            </div>
+            <div class="card-body">
+              {{userForm.value | json}}
+                <form [formGroup]="userForm" (ngSubmit)="onSave()">
+                    <div class= "form-group">
+                      <label>Sno:</label>
+                      <input type="number" placeholder="Enter your id" class="form-control" formControlName="sno" >
+                    </div>
+                    <div class= "form-group">
+                      <label>Name:</label>
+                      <input type="text" placeholder="Enter your Name" class="form-control" formControlName= "name">
+                    </div>
+                    <div class= "form-group">
+                      <label>Email:</label>
+                      <input type="email" placeholder="Enter your Email-id" class="form-control" formControlName="email">
+                    </div>
+                    <div class= "form-group">
+                      <label>ImageUrl:</label>
+                      <input type="text" placeholder="Enter your imageurl" class="form-control" formControlName="imageurl">
+                    </div>
+                    <div class= "form-group">
+                      <label>Number Of Repositories:</label>
+                      <input type="number" placeholder="Enter the number of repositories" class="form-control" formControlName="nofreps">
+                    </div>
+                    <button type="submit" class="btn btn-info"> Save Changes </button>
+                    <button type="submit" class="btn btn-danger mx-2" (click) = "onDelete()"> Delete User </button>
+                  </form>
+            </div>
+          </div>
+    </div>
+</div>
